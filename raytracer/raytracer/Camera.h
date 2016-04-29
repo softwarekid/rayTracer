@@ -10,6 +10,7 @@ private:
 
 public:
     Camera(float nearPlane_, float fov_, float viewAspect);
+    void SetDimension(int width, int height);
     Vector3f GetPos(int xPiexl, int yPixel);
 };
 

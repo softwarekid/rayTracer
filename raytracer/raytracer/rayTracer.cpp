@@ -1,9 +1,10 @@
 #include "rayTracer.h"
 #include "Ray.h"
 
-Vector3f RayTracer::Intersect(Ray ray, Sphere sphere)
+Vector3f RayTracer::Intersect(const Ray& ray, const Sphere& sphere)
 {
     Vector3f result;
+    
     return result;
 }
 
@@ -23,7 +24,7 @@ void RayTracer::Casting(int width, int height, float** colors)
            Vector3f pixelWorldPos = _camera.GetPos(i, j);
            ray.SetStartPos(pixelWorldPos);
            ray.SetDirection(pixelWorldPos - _eyePos);
-           
+           Intersect(ray, )
 
         }
     }

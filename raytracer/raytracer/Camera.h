@@ -4,14 +4,16 @@
 class Camera
 {
 private:
-    float _nearPlane;
+    Vector3f _pos;
+    float _focalLength; // similar to near plane
     float _fov;
-    float _viewAspect;
+    int _width;
+    int _height;
 
 public:
-    Camera(float nearPlane_, float fov_, float viewAspect);
-    void SetDimension(int width, int height);
-    Vector3f GetPos(int xPiexl, int yPixel);
+    Camera(const Vector3f& pos,float focalLength, float fov, int width, int height);
+    Vector3f GetPiexlEyeSpacePos(int xPiexl, int yPixel);
+    int Width();
+    int Height();
 };
-
 #endif

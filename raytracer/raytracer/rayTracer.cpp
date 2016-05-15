@@ -1,31 +1,29 @@
 #include "rayTracer.h"
 #include "Ray.h"
 
-Vector3f RayTracer::Intersect(const Ray& ray, const Sphere& sphere)
+
+Vector3f RayTracer::CalculateColor(const Vector3f& pos)
 {
-    Vector3f result;
+    return Vector3f();
+}
+
+RayTracer::RayTracer(const Camera& camera, const Scene& scene, const Light& light) :_camera(camera), _scene(scene)
+{
     
-    return result;
 }
 
-RayTracer::RayTracer(const Vector3f& eyePos, const Camera& camera) :_eyePos(eyePos), _camera(camera)
+void RayTracer::Casting(Vector3f** colors)
 {
-
-}
-
-void RayTracer::Casting(int width, int height, float** colors)
-{
-    _camera.SetDimension(width, height);
     Ray ray;
-    for (int i = 0; i < width; i++)
+    for (int i = 0; i < _camera.Width(); i++)
     {
-        for (int j = 0; j < height; j++)
+        for (int j = 0; j < _camera.Height(); j++)
         {
-           Vector3f pixelWorldPos = _camera.GetPos(i, j);
+           Vector3f pixelWorldPos = _camera.GetPiexlWorldSpacePos(i, j);
            ray.SetStartPos(pixelWorldPos);
            ray.SetDirection(pixelWorldPos - _eyePos);
-           Intersect(ray, )
-
+           Vector3f intersection = _scene.Intersect(ray);
+           colors[i][j] = CalculateColor(intersection);
         }
     }
 }

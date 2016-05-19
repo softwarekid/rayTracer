@@ -3,10 +3,12 @@
 #include "Vector3f.h"
 class Gameobject
 {
-private:
-    Vector3f position;
-    Vector3f rotation;
+protected:
+    Vector3f _position;
 public: 
+    Vector3f GetPosition();
+    Gameobject(const Vector3f& pos);
+    Gameobject(){};
     virtual ~Gameobject(){}
 };
 #endif

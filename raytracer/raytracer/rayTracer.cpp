@@ -19,10 +19,10 @@ void RayTracer::Casting(Vector3f** colors)
     {
         for (int j = 0; j < _camera.Height(); j++)
         {
-           Vector3f pixelWorldPos = _camera.GetPiexlWorldSpacePos(i, j);
+           Vector3f pixelWorldPos = _camera.GetPixelWorldSpacePos(i, j);
            ray.SetStartPos(pixelWorldPos);
-           ray.SetDirection(pixelWorldPos - _eyePos);
-           Vector3f intersection = _scene.Intersect(ray);
+           ray.SetDirection(pixelWorldPos - _camera.GetPosition());
+           float intersection = _scene.Intersect(ray);
            colors[i][j] = CalculateColor(intersection);
         }
     }

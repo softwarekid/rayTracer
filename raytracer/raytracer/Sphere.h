@@ -11,7 +11,7 @@ private:
 
 public:
     MeshType GetType() override;
-    Vector3f Intersect(const Ray& ray) override ;
+    float Intersect(const Ray& ray) override ;
     Sphere(const Vector3f& center, float radius);
     Sphere(const Sphere& sphere);
 };

@@ -9,9 +9,16 @@ void Scene::_Swap(Scene& lhv, Scene& rhv)
     rhv._objs = temp;
 }
 
-Vector3f Scene::Intersect(const Ray& ray)
+float Scene::Intersect(const Ray& ray)
 {
-    return Vector3f();
+    float rayParam = -1;
+    int count = _objs.size();
+    for (int i = 0; i < count; i++)
+    {
+        float tempParam = _objs[i]->Intersect(ray);
+        rayParam = tempParam > rayParam ? tempParam : rayParam;
+    }
+    return rayParam;
 }
 
 Scene::Scene(const Scene& scene) : Scene()

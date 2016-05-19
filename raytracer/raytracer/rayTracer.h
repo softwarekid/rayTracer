@@ -24,7 +24,6 @@ private:
 
 public:
     RayTracer(const Camera& camera, const Scene& scene, const Light& light);
-    void Casting( int height, Vector3f** colors);
-
+    void Casting(Vector3f** colors);
 };
 #endif

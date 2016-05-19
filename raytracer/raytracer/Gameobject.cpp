@@ -1,14 +1,10 @@
 #include "Gameobject.h"
-#include "Sphere.h"
 
-Gameobject* Gameobject::Clone(Gameobject* gameobject)
+Vector3f Gameobject::GetPosition()
 {
-    switch (gameobject->GetType())
-    {
-    case SphereType:
-        return new Sphere(*dynamic_cast<Sphere*>(gameobject));
-        break;
-    default:
-        return nullptr;
-    }
+    return _position;
+}
+
+Gameobject::Gameobject(const Vector3f& pos) : _position(pos)
+{
 }

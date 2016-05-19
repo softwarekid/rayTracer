@@ -11,7 +11,7 @@ private:
     void _Swap(Scene& lhv, Scene& rhv);
 public:
 
-    Vector3f Intersect(const Ray& ray);
+    float Intersect(const Ray& ray);
 
     Scene(const Scene& scene);
     Scene(Scene&& scene);

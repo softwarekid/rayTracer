@@ -2,7 +2,6 @@
 #define camera_h__
 #include "Vector3f.h"
 #include "Gameobject.h"
-#include "math.h"
 
 class Camera : public Gameobject
 {

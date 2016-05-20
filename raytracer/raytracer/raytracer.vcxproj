@@ -79,6 +79,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="Gameobject.h" />
+    <ClInclude Include="intersection.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="RayTracer.h" />

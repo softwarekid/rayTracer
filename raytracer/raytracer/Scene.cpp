@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Sphere.h"
+#include "intersection.h"
 using namespace std;
 
 void Scene::_Swap(Scene& lhv, Scene& rhv)

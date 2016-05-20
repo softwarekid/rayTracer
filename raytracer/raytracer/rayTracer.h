@@ -20,7 +20,7 @@ private:
     Camera _camera;
     Scene _scene;
     Light _light;
-    Vector3f CalculateColor(const Vector3f& pos);
+    Vector3f Trace(const Ray& ray);
 
 public:
     RayTracer(const Camera& camera, const Scene& scene, const Light& light);

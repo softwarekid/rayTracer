@@ -3,7 +3,7 @@
 #include <vector>
 #include "mesh.h"
 #include "Ray.h"
-
+#include "intersection.h"
 class Scene
 {
 private:
@@ -11,7 +11,7 @@ private:
     void _Swap(Scene& lhv, Scene& rhv);
 public:
 
-    float Intersect(const Ray& ray);
+    Intersection Intersect(const Ray& ray);
 
     Scene(const Scene& scene);
     Scene(Scene&& scene);

@@ -10,7 +10,7 @@ void Scene::_Swap(Scene& lhv, Scene& rhv)
     rhv._objs = temp;
 }
 
-float Scene::Intersect(const Ray& ray)
+Intersection Scene::Intersect(const Ray& ray)
 {
     float rayParam = -1;
     int count = _objs.size();
@@ -19,7 +19,12 @@ float Scene::Intersect(const Ray& ray)
         float tempParam = _objs[i]->Intersect(ray);
         rayParam = tempParam > rayParam ? tempParam : rayParam;
     }
-    return rayParam;
+	if (rayParam > 0)
+	{
+		return Intersection intersection();
+
+	}
+    return Intersection();
 }
 
 Scene::Scene(const Scene& scene) : Scene()

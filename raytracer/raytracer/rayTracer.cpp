@@ -4,14 +4,12 @@
 
 Vector3f RayTracer::Trace(const Ray& ray)
 {
-	// 复习一下microfacet 理论
-	
 	return Vector3f();
 }
 
 RayTracer::RayTracer(const Camera& camera, const Scene& scene, const Light& light) :_camera(camera), _scene(scene)
 {
-
+	
 }
 
 void RayTracer::Casting(Vector3f** colors)

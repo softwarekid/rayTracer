@@ -98,7 +98,8 @@ Vector3f Vector3f::operator*(float scalar)
 
 Vector3f Vector3f::operator-(const Vector3f v)
 {
-    return Vector3f(x - v.x, y - v.y, z - v.z);
+	return static_cast<const Vector3f*> (this)->operator-(v);
+    //return Vector3f(x - v.x, y - v.y, z - v.z);
 }
 
 Vector3f Vector3f::operator-(const Vector3f v) const

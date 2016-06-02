@@ -4,8 +4,7 @@
 
 Vector3f RayTracer::Trace(const Ray& ray)
 {
-	_scene.
-	return Vector3f();
+	_scene.	return Vector3f();
 }
 
 RayTracer::RayTracer(const Camera& camera, const Scene& scene, const Light& light) :_camera(camera), _scene(scene)
